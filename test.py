@@ -168,7 +168,8 @@ def input_setup(index):
 for idx_num in range(19,20):
   num_epoch=idx_num
   while(num_epoch==idx_num):
-      reader = tf.compat.v1.train.NewCheckpointReader('./checkpoint/CGAN_60/CGAN.model-'+ str(num_epoch))
+      reader = tf.compat.v1.train.NewCheckpointReader('./checkpoint/Lytro_model/CGAN.model-'+ str(num_epoch))
+      #reader = tf.compat.v1.train.NewCheckpointReader('./checkpoint/MFI-WHU_model/CGAN.model-'+ str(num_epoch))
       tf.compat.v1.disable_eager_execution()
       with tf.name_scope('IR_input'):
           images_near = tf.compat.v1.placeholder(tf.float32, [1,None,None,None], name='images_near')
